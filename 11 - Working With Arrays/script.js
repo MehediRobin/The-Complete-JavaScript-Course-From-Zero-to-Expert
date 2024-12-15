@@ -74,67 +74,82 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
-const currUnique = new Set(['USD','EUR','GBP','BDT'])
-currUnique.forEach(function (value, key, map) {
-console.log(`${key}: ${value}`); 
-
-})
-
-
-//For Of
-for (const movement of movements) {
-    if(movement>0){
-        console.log(`You deposited ${movement}`);
-    } else {
-        console.log(`You withdrew ${Math.abs(movement)}`);
-    }
+const displayMovements = function(movements){
+    movements.forEach(function(move,i){
+        const html = `<div class="movements__row">
+          <div class="movements__type movements__type--deposit">2 deposit</div>
+          <div class="movements__date">${i + 1}</div>
+          <div class="movements__value">${mov}</div>
+        </div>`
+    })
 }
 
-//For Each
-movements.forEach(function(movement, index, array){
-    console.log(movement, index, array);
-})
 
-let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+//Moving DOM Elements
 
-//Slice Methods [Doesn't mutate the original array]
-console.log(arr.slice(2));
-console.log(arr.slice(2, 4));
-console.log(arr.slice(-2));
-console.log(arr.slice(1, -1));
-console.log(arr.slice());
-console.log([...arr]);
 
-//Splice Methods  [Mutates the original Arrary]
-console.log(arr.splice(2));
-console.log(arr.splice(1, 3));
-console.log(arr);
 
-// Reverse Method [Mutates the original Arrary]
-arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-const arr2 = ['j', 'i', 'h', 'k', 'l'];
-console.log(arr2.reverse());
-console.log(arr2);
 
-//Concat Methods [Doesn't mutate the original]
+// const currUnique = new Set(['USD','EUR','GBP','BDT'])
+// currUnique.forEach(function (value, key, map) {
+// console.log(`${key}: ${value}`);
 
-const letters = arr.concat(arr2);
-console.log(letters);
-console.log([...arr, ...arr2]);
+// })
 
-//Join Methods
-console.log(letters.join(' - '));
 
-//Push, Shift, Unshift, Pop,
+// //For Of
+// for (const movement of movements) {
+//     if(movement>0){
+//         console.log(`You deposited ${movement}`);
+//     } else {
+//         console.log(`You withdrew ${Math.abs(movement)}`);
+//     }
+// }
 
-//AT Method
-const array = [23, 11, 64];
-console.log(arr[0]);
-console.log(arr.at(0));
+// //For Each
+// movements.forEach(function(movement, index, array){
+//     console.log(movement, index, array);
+// })
 
-//Getting the last element
+// let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-console.log(array[array.length - 1]);
-console.log(array.at(-1));
-console.log(array.slice(-1));
+// //Slice Methods [Doesn't mutate the original array]
+// console.log(arr.slice(2));
+// console.log(arr.slice(2, 4));
+// console.log(arr.slice(-2));
+// console.log(arr.slice(1, -1));
+// console.log(arr.slice());
+// console.log([...arr]);
+
+// //Splice Methods  [Mutates the original Arrary]
+// console.log(arr.splice(2));
+// console.log(arr.splice(1, 3));
+// console.log(arr);
+
+// // Reverse Method [Mutates the original Arrary]
+// arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+// const arr2 = ['j', 'i', 'h', 'k', 'l'];
+// console.log(arr2.reverse());
+// console.log(arr2);
+
+// //Concat Methods [Doesn't mutate the original]
+
+// const letters = arr.concat(arr2);
+// console.log(letters);
+// console.log([...arr, ...arr2]);
+
+// //Join Methods
+// console.log(letters.join(' - '));
+
+// //Push, Shift, Unshift, Pop,
+
+// //AT Method
+// const array = [23, 11, 64];
+// console.log(arr[0]);
+// console.log(arr.at(0));
+
+// //Getting the last element
+
+// console.log(array[array.length - 1]);
+// console.log(array.at(-1));
+// console.log(array.slice(-1));
